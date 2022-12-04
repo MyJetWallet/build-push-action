@@ -11,7 +11,7 @@ on:
 
 jobs:
   minimal:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Checkout
@@ -32,7 +32,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   git-context:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     services:
       registry:
         image: registry:2
@@ -83,7 +83,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   git-context-secret:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     services:
       registry:
         image: registry:2
@@ -143,7 +143,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   path-context:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
@@ -198,7 +198,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   error:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Checkout
@@ -229,7 +229,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   error-buildx:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Checkout
@@ -265,7 +265,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   docker-driver:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     services:
       registry:
         image: registry:2
@@ -290,7 +290,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   export-docker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Checkout
@@ -313,7 +313,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   network:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Checkout
@@ -337,7 +337,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   multi:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
@@ -396,7 +396,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   registry-cache:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     services:
       registry:
         image: registry:2
@@ -486,7 +486,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   local-cache-first:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       digest: ${{ steps.docker_build.outputs.digest }}
     services:
@@ -552,7 +552,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   local-cache-hit:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: local-cache-first
     services:
       registry:
@@ -625,7 +625,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v1
 
   github-cache:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
